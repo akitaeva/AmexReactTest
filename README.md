@@ -19,26 +19,26 @@ npm install
 
 ```mathematica
 amex-react-test/
-├── src/ # Source code for the project
-│ ├── app/ # Root-level application components
-│ │ └── App.tsx # Main application entry component
-│ ├── components/ # Reusable UI components
-│ │ └── Modal/ # Modal component folder
-│ │ ├── Modal.tsx # Modal component implementation
-│ │ └── Modal.test.tsx # Unit tests for the Modal component
-│ ├── index.tsx # Entry point for the component library
-│ ├── styles/ # Global and shared CSS styles
-│ └── global.css # Global stylesheet
-├── public/ # Static assets (e.g., images, fonts)
-├── .env.example # Example environment variable file
-├── .gitignore # Git ignored files and directories
-├── .prettierrc # Prettier configuration for code formatting
-├── vitest.setup.ts # Vitest global setup file
-├── vite.config.ts # Vite configuration file for bundling
-├── eslint.config.js # ESLint configuration for linting
-├── tsconfig.json # TypeScript compiler configuration
-├── package.json # Project metadata and NPM scripts
-└── README.md # Project documentation
+├── src/                           # Source code for the project
+│   ├── app/                       # Root-level application components
+│   │   └── App.tsx                # Main application entry component
+│   ├── components/                # Reusable UI components
+│   │   └── Modal/                 # Modal component folder
+│   │       ├── Modal.tsx          # Modal component implementation
+│   │       └── Modal.test.tsx     # Unit tests for the Modal component
+│   ├── index.tsx                  # Entry point for the component library
+│   ├── styles/                    # Global and shared CSS styles
+│       └── global.css             # Global stylesheet
+├── public/                        # Static assets (e.g., images, fonts)
+├── .env.example                   # Example environment variable file
+├── .gitignore                     # Git ignored files and directories
+├── .prettierrc                    # Prettier configuration for code formatting
+├── vitest.setup.ts                # Vitest global setup file
+├── vite.config.ts                 # Vite configuration file for bundling
+├── eslint.config.js               # ESLint configuration for linting
+├── tsconfig.json                  # TypeScript compiler configuration
+├── package.json                   # Project metadata and NPM scripts
+└── README.md                      # Project documentation
 ```
 
 ## Components
