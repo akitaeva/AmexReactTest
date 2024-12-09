@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitest/config'
+import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import * as dotenv from 'dotenv';
 
@@ -28,7 +28,7 @@ export default defineConfig({
       },
     },
   },
-// Configuration for testing
+  // Configuration for testing
   test: {
     globals: true,
     environment: 'jsdom',
@@ -36,4 +36,4 @@ export default defineConfig({
   },
   // Base path for assets
   publicDir: 'public', // Directory for static asset
-})
+});

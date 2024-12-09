@@ -15,7 +15,12 @@ interface ModalProps {
  *    2. Pressing the Escape key.
  *    3. Clicking outside the modal content.
  */
-const Modal: FC<ModalProps> = ({ isOpen, onClose, title = 'Modal Title', children }) => {
+const Modal: FC<ModalProps> = ({
+  isOpen,
+  onClose,
+  title = 'Modal Title',
+  children,
+}) => {
   // Handle the Escape key to close the modal
   const handleKeyDown = (event: KeyboardEvent) => {
     if (event.key === 'Escape') {
@@ -24,7 +29,9 @@ const Modal: FC<ModalProps> = ({ isOpen, onClose, title = 'Modal Title', childre
   };
 
   // Handle clicks outside the modal content to trigger onClose
-  const handleOutsideClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  const handleOutsideClick = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
     if (e.target === e.currentTarget) {
       onClose();
     }

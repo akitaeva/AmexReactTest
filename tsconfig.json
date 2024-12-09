@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-    "jsx": "react-jsx", // For React 17+ 
+    "jsx": "react-jsx", // For React 17+
     "target": "ESNext",
     "module": "ESNext",
     "lib": ["DOM", "ESNext"],
-    "strict": true,     // All strict type-checking options to improve code safety.
+    "strict": true, // All strict type-checking options to improve code safety.
     "moduleResolution": "Node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "types": ["node", "vitest"]
   },
-  "include": ["src", "tests"]  // Specifies the files or directories to include in the compilation process.
+  "include": ["src", "tests"] // Specifies the files or directories to include in the compilation process.
 }
