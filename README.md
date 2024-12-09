@@ -17,6 +17,7 @@ npm install
 
 ## Project Structure
 
+```mathematica
 amex-react-test/
 ├── src/ # Source code for the project
 │ ├── app/ # Root-level application components
@@ -38,6 +39,7 @@ amex-react-test/
 ├── tsconfig.json # TypeScript compiler configuration
 ├── package.json # Project metadata and NPM scripts
 └── README.md # Project documentation
+```
 
 ## Components
 
