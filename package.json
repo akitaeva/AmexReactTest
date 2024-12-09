@@ -8,7 +8,7 @@
     "build": "vite build",
     "start": "serve dist",
     "test": "vitest run",
-    "test:watch": "vitest",
+    "test:watch": "vitest --watch",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
