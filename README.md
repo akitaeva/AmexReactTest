@@ -17,7 +17,7 @@ npm install
 
 ## Project Structure
 
-```mathematica
+```plaintext
 amex-react-test/
 ├── src/                           # Source code for the project
 │   ├── app/                       # Root-level application components
