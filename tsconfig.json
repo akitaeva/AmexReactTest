@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
-    "target": "ESNext", // "ESNext" allows using modern JavaScript features like optional chaining and async/await.
+    "jsx": "react-jsx", // For React 17+ 
+    "target": "ESNext",
     "module": "ESNext",
-    "jsx": "react-jsx", // For React 17+ with the new JSX transform, use "react-jsx".
+    "lib": ["DOM", "ESNext"],
     "strict": true,     // All strict type-checking options to improve code safety.
-    "moduleResolution": "node",
-    "esModuleInterop": true
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src", "tests"]  // Specifies the files or directories to include in the compilation process.
 }
