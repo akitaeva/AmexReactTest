@@ -91,7 +91,7 @@ describe('Modal', () => {
     );
 
     // Simulate clicking outside the modal (scrim area)
-    fireEvent.click(screen.getByTestId('mockId'));
+    fireEvent.click(screen.getByTestId('scrim'));
 
     // Verify the onClose callback is called once
     expect(mockClose).toHaveBeenCalledTimes(1);
@@ -115,9 +115,37 @@ describe('Modal', () => {
   });
 
 
-  // TODO: When the modal is open, the page content behind it should not scroll.
-  test('locks scrolling on the body when modal is open', () => {});
-  test('restores body scroll when modal closes', () => {});
+  // When the modal is open, the page content behind it should not scroll.
+  test('locks scrolling on the body when modal is open', () => {
+    render(
+      <Modal isOpen={true} onClose={mockClose}>
+        Content
+      </Modal>
+    );
+  
+    // Verify body scrolling is locked
+    expect(document.body.style.overflow).toBe('hidden');
+  });
+  
+  test('restores body scroll when modal closes', () => {
+    const { rerender } = render(      
+    <>
+      <Modal isOpen={true} onClose={mockClose}>
+        <div>Content</div>
+      </Modal>
+    </> );
+
+     // Close the modal
+    rerender(    
+    <>
+      <Modal isOpen={false} onClose={mockClose}>
+        <div>Content</div>
+      </Modal>
+    </>);
+
+    // Verify body scrolling is restored
+    expect(document.body.style.overflow).toBe('');
+  });
 
   // Support for rendering multiple modals
   test('supports multiple modals rendered at the same time', () => {

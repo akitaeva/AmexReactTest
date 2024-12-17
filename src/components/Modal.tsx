@@ -21,6 +21,23 @@ const Modal: FC<ModalProps> = ({
   title = 'Modal Title',
   children,
 }) => {
+
+    // Add scroll lock when modal opens
+  useEffect(() => {
+    if (isOpen) {
+      // Lock scrolling
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Restore scrolling
+      document.body.style.overflow = '';
+    }
+
+    // Cleanup function to ensure scrolling is restored
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+  
   // Handle the Escape key to close the modal
   const handleKeyDown = (event: KeyboardEvent) => {
     if (event.key === 'Escape') {
@@ -59,9 +76,9 @@ const Modal: FC<ModalProps> = ({
       aria-labelledby="modal-title"
       style={overlayStyles}
       onClick={handleOutsideClick}
-      data-testid="mockId"
+      data-testid="scrim"
     >
-      <div style={modalStyles}>
+      <div style={modalStyles} onClick={(e) => e.stopPropagation()}>
         <header style={headerStyles}>
           <h1 id="modal-title" style={headingStyles}>
             {title}
