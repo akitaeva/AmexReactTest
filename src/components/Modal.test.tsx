@@ -96,4 +96,51 @@ describe('Modal', () => {
     // Verify the onClose callback is called once
     expect(mockClose).toHaveBeenCalledTimes(1);
   });
+
+  // TODO: Conditional rendering based on isOpen prop
+  test('does not render when isOpen is false', () => {});
+
+
+  // Ensure the modal is ARIA-compliant for screen readers.
+  test('has proper aria-labelledby and aria-describedby attributes', () => {
+    render(
+      <Modal isOpen={true} onClose={mockClose}>
+        Content
+      </Modal>
+    );
+
+    // Verify that the modal has proper aria-labelledby and aria-describedby attributes
+    expect(screen.getByRole('dialog')).toHaveAttribute('aria-labelledby','modal-title');
+    expect(screen.getByRole('dialog')).toHaveAttribute('aria-describedby', 'modal-content');
+  });
+
+
+  // TODO: When the modal is open, the page content behind it should not scroll.
+  test('locks scrolling on the body when modal is open', () => {});
+  test('restores body scroll when modal closes', () => {});
+
+  // Support for rendering multiple modals
+  test('supports multiple modals rendered at the same time', () => {
+    render(
+      <>
+        <Modal isOpen={true} onClose={mockClose}>
+          <div>Content 1</div>
+        </Modal>
+        <Modal isOpen={true} onClose={mockClose}>
+          Content 2
+        </Modal>
+      </>
+    );
+
+     // Verify that both modals are rendered
+    const modals = screen.getAllByRole('dialog');
+    expect(modals).toHaveLength(2);
+
+    // Verify that both modals have expected content
+    expect(screen.getByText('Content 1')).toBeInTheDocument();
+    expect(screen.getByText('Content 2')).toBeInTheDocument();
+  });
 });
+
+
+

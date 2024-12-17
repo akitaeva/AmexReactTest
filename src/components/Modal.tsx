@@ -55,6 +55,7 @@ const Modal: FC<ModalProps> = ({
     <div
       role="dialog"
       aria-modal="true"
+      aria-describedby="modal-content"
       aria-labelledby="modal-title"
       style={overlayStyles}
       onClick={handleOutsideClick}
@@ -74,7 +75,7 @@ const Modal: FC<ModalProps> = ({
             Close
           </button>
         </header>
-        <div>{children}</div>
+        <div id="modal-content">{children}</div>
       </div>
     </div>
   );
