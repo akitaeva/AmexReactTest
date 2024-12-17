@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-    "jsx": "react-jsx", // For React 17+
-    "target": "ESNext",
-    "module": "ESNext",
-    "lib": ["DOM", "ESNext"],
-    "strict": true, // All strict type-checking options to improve code safety.
-    "moduleResolution": "Node",
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "types": ["node", "vitest"]
+    "jsx": "react-jsx",                // For React 17+ or React 18+ JSX transform
+    "target": "ESNext",                // Use the latest JavaScript features
+    "module": "ESNext",                // Use ES module system for imports/exports
+    "lib": ["DOM", "ESNext"],          // Include DOM and latest ESNext features
+    "strict": true,                    // Enable all strict type-checking options
+    "moduleResolution": "Node",        // Resolve modules like Node.js
+    "esModuleInterop": true,           // Ensures compatibility with CommonJS modules
+    "allowSyntheticDefaultImports": true, // Allows default imports from modules without a default export
+    "types": ["node", "vitest"]        // Include types for Node.js and Vitest
   },
-  "include": ["src", "tests"] // Specifies the files or directories to include in the compilation process.
+  "include": ["src", "tests"]          // Include source code and tests in the TypeScript compilation
 }
