@@ -13,8 +13,8 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: './src/index.tsx', // Entry point for the library
-      name: 'AmexComponentLibrary', // Name of the global variable for UMD builds
+      entry: './src/index.tsx',           // Entry point for the library
+      name: 'AmexComponentLibrary',       // Name of the global variable for UMD builds
       fileName: (format) => `amex-component-library.${format}.js`, // Output file names
     },
     rollupOptions: {
@@ -32,8 +32,8 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: './vitest.setup.ts', // Include optional setup file for testing utilities
+    setupFiles: './vitest.setup.ts',      // Include optional setup file for testing utilities
   },
   // Base path for assets
-  publicDir: 'public', // Directory for static asset
+  publicDir: 'public',                    // Directory for static assets
 });
