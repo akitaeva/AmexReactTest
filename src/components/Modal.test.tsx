@@ -155,7 +155,7 @@ describe('Modal', () => {
           <div>Content 1</div>
         </Modal>
         <Modal isOpen={true} onClose={mockClose}>
-          Content 2
+          <div>Content 2 </div>
         </Modal>
       </>
     );

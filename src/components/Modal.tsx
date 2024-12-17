@@ -118,7 +118,8 @@ const modalStyles = {
   background: '#fff',
   padding: '1.5rem',
   borderRadius: '0.5rem',
-  width: '30rem',
+  maxWidth: '30rem',
+  width: '100%',
   boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
   position: 'relative',
 } as React.CSSProperties;
