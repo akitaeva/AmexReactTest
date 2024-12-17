@@ -8,14 +8,14 @@
     "moduleResolution": "Node",        // Resolve modules like Node.js
     "esModuleInterop": true,           // Ensures compatibility with CommonJS modules
     "allowSyntheticDefaultImports": true, // Allows default imports from modules without a default export
-    "types": ["node", "vitest"]        // Include types for Node.js and Vitest
+    "types": ["node", "vitest"],       // Include types for Node.js and Vitest
+    "baseUrl": ".", 
+    "paths": {                            // Paths configuration for alias imports
+      "@actions/*": ["src/actions/*"],
+      "@components/*": ["src/components/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@utils/*": ["src/utils/*"]
+    }
   },
-  "include": ["src", "tests"],          // Include source code and tests in the TypeScript compilation
-  "baseUrl": ".", 
-  "paths": {                            // Paths configuration for alias imports
-    "@actions/*": ["src/actions/*"],
-    "@components/*": ["src/components/*"],
-    "@hooks/*": ["src/hooks/*"],
-    "@utils/*": ["src/utils/*"]
-  }
+  "include": ["src", "tests"]          // Include source code and tests in the TypeScript compilation
 }

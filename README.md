@@ -26,9 +26,9 @@ amex-react-test/
 │   │   └── Modal/                 # Modal component folder
 │   │       ├── Modal.tsx          # Modal component implementation
 │   │       └── Modal.test.tsx     # Unit tests for the Modal component
-│   ├── index.tsx                  # Entry point for the component library
 │   ├── styles/                    # Global and shared CSS styles
-│       └── global.css             # Global stylesheet
+│   │   └── global.css             # Global stylesheet
+│   └── index.tsx                  # Entry point for the component library
 ├── public/                        # Static assets (e.g., images, fonts)
 ├── .env.example                   # Example environment variable file
 ├── .gitignore                     # Git ignored files and directories
