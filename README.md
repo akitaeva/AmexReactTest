@@ -23,9 +23,12 @@ amex-react-test/
 │   ├── app/                       # Root-level application components
 │   │   └── App.tsx                # Main application entry component
 │   ├── components/                # Reusable UI components
-│   │   └── Modal/                 # Modal component folder
-│   │       ├── Modal.tsx          # Modal component implementation
-│   │       └── Modal.test.tsx     # Unit tests for the Modal component
+│   │   ├── Modal/                 # Modal component folder
+│   │   │    ├── Modal.tsx         # Modal component implementation
+│   │   │    └── Modal.test.tsx    # Unit tests for the Modal component
+│   │   └── Tabs/                  # Tabs component folder
+│   │        ├── Tabs.tsx          # Tabs component implementation
+│   │        └── Tabs.test.tsx     # Unit tests for the Modal component
 │   ├── styles/                    # Global and shared CSS styles
 │   │   └── global.css             # Global stylesheet
 │   └── index.tsx                  # Entry point for the component library
