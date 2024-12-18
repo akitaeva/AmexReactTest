@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 
 const tabData = [
@@ -21,7 +21,24 @@ const tabData = [
 
 const Tabs: React.FC = () => { 
   const [activeTab, setActiveTab]  = useState(0);
-  
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);  // Stable ref array
+
+  // Handle key navigation
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    let newIndex = activeTab;
+
+    if (e.key === 'ArrowRight') {
+      newIndex = (activeTab + 1) % tabData.length; // Move to next tab
+    } else if (e.key === 'ArrowLeft') {
+      newIndex = (activeTab - 1 + tabData.length) % tabData.length; // Move to previous tab
+    }
+
+    if (newIndex !== activeTab) {
+      setActiveTab(newIndex);
+      tabRefs.current[newIndex]?.focus(); // Explicitly move focus
+    }
+  };
+
   return (
    <div style={containerStyles}>
     {/*Tab Header */}
@@ -29,6 +46,9 @@ const Tabs: React.FC = () => {
       {tabData.map((tab,index)=> (
         <button 
           key={index} 
+          ref={(el) => {
+            tabRefs.current[index] = el!;
+          }} // Attach ref to button
           role="tab"
           aria-selected={activeTab === index}
           onClick={()=> setActiveTab(index)}
